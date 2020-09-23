@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		845549B52519E9590073643E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549B42519E9590073643E /* AppDelegate.swift */; };
-		845549B72519E9590073643E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549B62519E9590073643E /* SceneDelegate.swift */; };
-		845549B92519E9590073643E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549B82519E9590073643E /* ViewController.swift */; };
+		845549B92519E9590073643E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549B82519E9590073643E /* MainViewController.swift */; };
 		845549BC2519E9590073643E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845549BA2519E9590073643E /* Main.storyboard */; };
 		845549BE2519E95F0073643E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845549BD2519E95F0073643E /* Assets.xcassets */; };
 		845549C12519E95F0073643E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845549BF2519E95F0073643E /* LaunchScreen.storyboard */; };
+		845549CB251AEE240073643E /* testImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 845549CA251AEE240073643E /* testImage.jpg */; };
+		845549CD251B237D0073643E /* FlitersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549CC251B237D0073643E /* FlitersViewController.swift */; };
+		845549CF251B24BB0073643E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549CE251B24BB0073643E /* BaseTableViewController.swift */; };
+		845549D1251B2EB90073643E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D0251B2EB90073643E /* SceneDelegate.swift */; };
+		845549D3251B45F30073643E /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D2251B45F30073643E /* ImagePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		845549B12519E9590073643E /* PhotoFliterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFliterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845549B42519E9590073643E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		845549B62519E9590073643E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		845549B82519E9590073643E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		845549B82519E9590073643E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		845549BB2519E9590073643E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845549BD2519E95F0073643E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845549C02519E95F0073643E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845549C22519E95F0073643E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845549CA251AEE240073643E /* testImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImage.jpg; sourceTree = "<group>"; };
+		845549CC251B237D0073643E /* FlitersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlitersViewController.swift; sourceTree = "<group>"; };
+		845549CE251B24BB0073643E /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		845549D0251B2EB90073643E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		845549D2251B45F30073643E /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 		845549A82519E9590073643E = {
 			isa = PBXGroup;
 			children = (
+				845549CA251AEE240073643E /* testImage.jpg */,
 				845549B32519E9590073643E /* PhotoFliterDemo */,
 				845549B22519E9590073643E /* Products */,
 			);
@@ -56,13 +65,16 @@
 		845549B32519E9590073643E /* PhotoFliterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				845549D0251B2EB90073643E /* SceneDelegate.swift */,
 				845549B42519E9590073643E /* AppDelegate.swift */,
-				845549B62519E9590073643E /* SceneDelegate.swift */,
-				845549B82519E9590073643E /* ViewController.swift */,
+				845549B82519E9590073643E /* MainViewController.swift */,
 				845549BA2519E9590073643E /* Main.storyboard */,
 				845549BD2519E95F0073643E /* Assets.xcassets */,
 				845549BF2519E95F0073643E /* LaunchScreen.storyboard */,
 				845549C22519E95F0073643E /* Info.plist */,
+				845549CC251B237D0073643E /* FlitersViewController.swift */,
+				845549CE251B24BB0073643E /* BaseTableViewController.swift */,
+				845549D2251B45F30073643E /* ImagePickerViewController.swift */,
 			);
 			path = PhotoFliterDemo;
 			sourceTree = "<group>";
@@ -128,6 +140,7 @@
 				845549C12519E95F0073643E /* LaunchScreen.storyboard in Resources */,
 				845549BE2519E95F0073643E /* Assets.xcassets in Resources */,
 				845549BC2519E9590073643E /* Main.storyboard in Resources */,
+				845549CB251AEE240073643E /* testImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845549B92519E9590073643E /* ViewController.swift in Sources */,
+				845549D3251B45F30073643E /* ImagePickerViewController.swift in Sources */,
+				845549D1251B2EB90073643E /* SceneDelegate.swift in Sources */,
+				845549B92519E9590073643E /* MainViewController.swift in Sources */,
 				845549B52519E9590073643E /* AppDelegate.swift in Sources */,
-				845549B72519E9590073643E /* SceneDelegate.swift in Sources */,
+				845549CF251B24BB0073643E /* BaseTableViewController.swift in Sources */,
+				845549CD251B237D0073643E /* FlitersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +232,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,7 +301,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A9AWW29YYL;
 				INFOPLIST_FILE = PhotoFliterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +320,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A9AWW29YYL;
 				INFOPLIST_FILE = PhotoFliterDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
