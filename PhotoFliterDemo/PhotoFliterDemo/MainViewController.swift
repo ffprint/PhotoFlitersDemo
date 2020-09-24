@@ -14,26 +14,6 @@ let screenHeight = UIScreen.main.bounds.height
 
 class MainViewController: BaseTableViewController {
 
-    private var _dataSource = ["CICategoryBlur",
-                               "CICategoryColorAdjustment",
-                               "CICategoryColorEffect",
-                               "CICategoryCompositeOperation",
-                               "CICategoryDistortionEffect",
-                               "CICategoryGenerator",
-                               "CICategoryGeometryAdjustment",
-                               "CICategoryGradient",
-                               "CICategoryHalftoneEffect",
-                               "CICategoryReduction",
-                               "CICategorySharpen",
-                               "CICategoryStylize",
-                               "CICategoryTileEffect",
-                               "CICategoryTransition"]
-
-    override var dataSource: [String] {
-        get { _dataSource }
-        set { _dataSource = newValue }
-    }
-
     let image = UIImage(named: "testImage.jpg")
     let imageView1 = UIImageView()
     let imageView2 = UIImageView()
@@ -43,6 +23,7 @@ class MainViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        dataSource = FlitersTool.shared.FiltersCategorys()
 //        let image1 = CIImage.init(cgImage: (image?.cgImage)!)
 //
 //        filter?.setValue(image1, forKey: kCIInputImageKey)

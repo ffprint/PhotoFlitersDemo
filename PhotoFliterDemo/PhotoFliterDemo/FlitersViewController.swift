@@ -8,22 +8,13 @@
 
 import UIKit
 
-class FlitersViewController: BaseTableViewController, ImagePickerProtocol {
-//    private var _dataSource = ["CICategoryBlur",
-//                               "CICategoryColorAdjustment",
-//                               "CICategoryColorEffect",
-//                               "CICategoryCompositeOperation"]
-//
-//    override var dataSource: [String] {
-//        get { _dataSource }
-//        set { _dataSource = newValue }
-//    }
-
+class FlitersViewController: BaseTableViewController {
+    
     var category: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = getFiltersByCategory(category)
+        dataSource = FlitersTool.shared.getFiltesByCategory(category)
     }
 
     func getFiltersByCategory(_ category: String) -> [String] {
@@ -33,20 +24,9 @@ class FlitersViewController: BaseTableViewController, ImagePickerProtocol {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
-
-        let pick = ImagePickerViewController()
-        pick.delegate = self
-        present(pick, animated: true, completion: nil)
-    }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        print(info)
-//        picker.dismiss(animated: true) {
-//
-//        }
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
+        let vc = FilterDetailViewController()
+        vc.title = dataSource[indexPath.row]
+        vc.filterName = dataSource[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

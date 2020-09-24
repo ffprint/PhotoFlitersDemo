@@ -28,3 +28,9 @@ class ImagePickerViewController: UIImagePickerController {
     }
 
 }
+extension ImagePickerViewController {
+    func delegate(_ delegate: ImagePickerProtocol) -> Self {
+        self.delegate = delegate
+        return self
+    }
+}
