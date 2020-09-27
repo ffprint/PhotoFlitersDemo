@@ -8,6 +8,15 @@
 
 import UIKit
 
+let isIphoneX: Bool = {
+    if #available(iOS 11.0, *) {
+        if UIApplication.shared.delegate?.window??.safeAreaInsets.bottom ?? 0 > 0 {
+            return true
+        }
+    }
+    return false
+}()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

@@ -17,9 +17,11 @@
 		845549CF251B24BB0073643E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549CE251B24BB0073643E /* BaseTableViewController.swift */; };
 		845549D1251B2EB90073643E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D0251B2EB90073643E /* SceneDelegate.swift */; };
 		845549D3251B45F30073643E /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D2251B45F30073643E /* ImagePickerViewController.swift */; };
-		845549D5251C49410073643E /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D4251C49410073643E /* FilterDetailViewController.swift */; };
 		845549D7251C6E040073643E /* FlitersTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549D6251C6E040073643E /* FlitersTool.swift */; };
 		845549D9251C71AC0073643E /* FilterCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845549D8251C71AC0073643E /* FilterCategory.plist */; };
+		845549DB251D97EF0073643E /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549DA251D97EF0073643E /* FilterDetailViewController.swift */; };
+		845549DD251DDF100073643E /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845549DC251DDF100073643E /* FilterCell.swift */; };
+		845549E3251E079A0073643E /* whiteMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 845549E2251E07990073643E /* whiteMask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +37,11 @@
 		845549CE251B24BB0073643E /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		845549D0251B2EB90073643E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		845549D2251B45F30073643E /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
-		845549D4251C49410073643E /* FilterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
 		845549D6251C6E040073643E /* FlitersTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlitersTool.swift; sourceTree = "<group>"; };
 		845549D8251C71AC0073643E /* FilterCategory.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FilterCategory.plist; sourceTree = "<group>"; };
+		845549DA251D97EF0073643E /* FilterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
+		845549DC251DDF100073643E /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		845549E2251E07990073643E /* whiteMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteMask.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			children = (
 				845549D8251C71AC0073643E /* FilterCategory.plist */,
 				845549CA251AEE240073643E /* testImage.jpg */,
+				845549E2251E07990073643E /* whiteMask.png */,
 				845549B32519E9590073643E /* PhotoFliterDemo */,
 				845549B22519E9590073643E /* Products */,
 			);
@@ -74,16 +79,17 @@
 			children = (
 				845549D0251B2EB90073643E /* SceneDelegate.swift */,
 				845549B42519E9590073643E /* AppDelegate.swift */,
-				845549B82519E9590073643E /* MainViewController.swift */,
 				845549BA2519E9590073643E /* Main.storyboard */,
 				845549BD2519E95F0073643E /* Assets.xcassets */,
 				845549BF2519E95F0073643E /* LaunchScreen.storyboard */,
 				845549C22519E95F0073643E /* Info.plist */,
+				845549B82519E9590073643E /* MainViewController.swift */,
 				845549CC251B237D0073643E /* FlitersViewController.swift */,
-				845549D4251C49410073643E /* FilterDetailViewController.swift */,
+				845549DA251D97EF0073643E /* FilterDetailViewController.swift */,
 				845549CE251B24BB0073643E /* BaseTableViewController.swift */,
 				845549D2251B45F30073643E /* ImagePickerViewController.swift */,
 				845549D6251C6E040073643E /* FlitersTool.swift */,
+				845549DC251DDF100073643E /* FilterCell.swift */,
 			);
 			path = PhotoFliterDemo;
 			sourceTree = "<group>";
@@ -146,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845549E3251E079A0073643E /* whiteMask.png in Resources */,
 				845549C12519E95F0073643E /* LaunchScreen.storyboard in Resources */,
 				845549BE2519E95F0073643E /* Assets.xcassets in Resources */,
 				845549BC2519E9590073643E /* Main.storyboard in Resources */,
@@ -165,9 +172,10 @@
 				845549D1251B2EB90073643E /* SceneDelegate.swift in Sources */,
 				845549B92519E9590073643E /* MainViewController.swift in Sources */,
 				845549D7251C6E040073643E /* FlitersTool.swift in Sources */,
-				845549D5251C49410073643E /* FilterDetailViewController.swift in Sources */,
 				845549B52519E9590073643E /* AppDelegate.swift in Sources */,
 				845549CF251B24BB0073643E /* BaseTableViewController.swift in Sources */,
+				845549DB251D97EF0073643E /* FilterDetailViewController.swift in Sources */,
+				845549DD251DDF100073643E /* FilterCell.swift in Sources */,
 				845549CD251B237D0073643E /* FlitersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

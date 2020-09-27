@@ -13,76 +13,40 @@ let screenWidth = UIScreen.main.bounds.width
 let screenHeight = UIScreen.main.bounds.height
 
 class MainViewController: BaseTableViewController {
+    var category = ""
+    lazy var imagePick: ImagePickerViewController = {
+        let vc = ImagePickerViewController().delegate(self)
+        return vc
+    }()
 
-    let image = UIImage(named: "testImage.jpg")
-    let imageView1 = UIImageView()
-    let imageView2 = UIImageView()
-    let filter = CIFilter(name: "CIMaximumComponent")
-    let context = CIContext(options: nil)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        dataSource = FlitersTool.shared.FiltersCategorys()
-//        let image1 = CIImage.init(cgImage: (image?.cgImage)!)
-//
-//        filter?.setValue(image1, forKey: kCIInputImageKey)
-//        filter?.setValue(NSNumber.init(value: 10), forKey: kCIInputRadiusKey)
-//
-//        let out = filter?.outputImage
-//        let cgimage = context.createCGImage(out!, from: out!.extent)
-//        let filter_image = UIImage.init(cgImage: cgimage!)
-//        imageView1.image = filter_image
-        
+        dataSource = FiltersTool.shared.filtersCategorys()
     }
 }
 
 extension MainViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
-        
-        let filters = FlitersViewController()
-        filters.title = dataSource[indexPath.row]
-        filters.category = dataSource[indexPath.row]
-        self.navigationController?.pushViewController(filters, animated: true)
+        category = dataSource[indexPath.row]
+        present(imagePick, animated: true, completion: nil)
     }
 }
 
-/*
- kCICategoryBlur:
+extension MainViewController: ImagePickerProtocol {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        picker.dismiss(animated: true) {
+            let vc = FlitersViewController()
+            vc.title = self.category + " 类滤镜"
+            vc.category = self.category
+            vc.originalImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+            vc.dataSource = self.dataSource
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
- ["CIBokehBlur",
- "CIBoxBlur",
- "CIDepthBlurEffect",
- "CIDiscBlur",
- "CIGaussianBlur",
- "CIMaskedVariableBlur",
- "CIMedianFilter",
- "CIMorphologyGradient",
- "CIMorphologyMaximum",
- "CIMorphologyMinimum",
- "CIMorphologyRectangleMaximum",
- "CIMorphologyRectangleMinimum",
- "CIMotionBlur",
- "CINoiseReduction",
- "CIZoomBlur"]
-
- kCICategoryColorAdjustment:
-
- ["CIColorClamp",
- "CIColorControls",
- "CIColorMatrix",
- "CIColorPolynomial",
- "CIDepthToDisparity",
- "CIDisparityToDepth",
- "CIExposureAdjust",
- "CIGammaAdjust",
- "CIHueAdjust",
- "CILinearToSRGBToneCurve",
- "CISRGBToneCurveToLinear",
- "CITemperatureAndTint",
- "CIToneCurve",
- "CIVibrance",
- "CIWhitePointAdjust"]
-
- */
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+}

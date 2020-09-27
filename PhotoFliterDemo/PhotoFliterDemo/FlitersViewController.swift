@@ -8,13 +8,46 @@
 
 import UIKit
 
+private let ImageView_Y: CGFloat = {
+    isIphoneX ? 108 : 84
+}()
+
 class FlitersViewController: BaseTableViewController {
-    
     var category: String = ""
-    
+    var originalImage: UIImage?
+
+    private var filterImage: UIImage?
+    private let cellId = "FilterCell"
+
+    lazy var imageView: UIImageView = {
+        let view = UIImageView.init(frame: CGRect(x: 20, y: ImageView_Y, width: screenWidth - 40, height: 300))
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+
+    private var flitersImages: [UIImage] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = FlitersTool.shared.getFiltesByCategory(category)
+        view.backgroundColor = .white
+
+        dataSource = ["原图"] + FiltersTool.shared.getFiltesByCategory(category)
+        flitersImages = FiltersTool.shared.filterImages(originalImage!, category)
+
+
+        imageView.image = originalImage
+        view.addSubview(imageView)
+
+        tableView.register(FilterCell.self, forCellReuseIdentifier: cellId)
+        tableView.showsVerticalScrollIndicator = false
+        tableView.frame = CGRect(x: 0, y: 0, width: 130, height: screenWidth)
+        tableView.center.y = screenHeight - 120
+        tableView.center.x = screenWidth / 2
+        tableView.transform = CGAffineTransform(rotationAngle: -.pi / 2)
     }
 
     func getFiltersByCategory(_ category: String) -> [String] {
@@ -22,11 +55,18 @@ class FlitersViewController: BaseTableViewController {
         return filters
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! FilterCell
+        cell.dataSource = (dataSource[indexPath.row], flitersImages[indexPath.row])
+        return cell
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         super.tableView(tableView, didSelectRowAt: indexPath)
-        let vc = FilterDetailViewController()
-        vc.title = dataSource[indexPath.row]
-        vc.filterName = dataSource[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        imageView.image = flitersImages[indexPath.row]
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
